@@ -1,5 +1,7 @@
 package w3;
 
+import w2.InsertionSort;
+
 /**
  * Created by Matija Vižintin
  * Date: 11. 07. 2015
@@ -9,7 +11,15 @@ public class QuickSort3Way<T extends Comparable<T>> extends QuickSort<T> {
 
     @Override
     protected void sort(T[] input, int lo, int hi) {
-        if (hi <= lo) return;
+//        if (hi <= lo) return;
+        if (hi <= lo + CUT_OFF - 1) {
+            new InsertionSort<T>().sort(input, lo, hi);
+            return;
+        }
+
+        // swap with median
+//        int m = medianOf3(input, lo, lo + (hi - lo) / 2, hi);
+//        swap(input, lo, m);
 
         // partition; between lt and gt will be the same values as v --> already sorted
         int i = lo;

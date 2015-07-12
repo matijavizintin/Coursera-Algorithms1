@@ -10,7 +10,6 @@ import java.time.Clock;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -23,7 +22,7 @@ import java.util.concurrent.Future;
  * Time: 20.18
  */
 public class SortTest {
-    private int loops = 7;
+    private int loops = 150;
 
     @Test
     public void quiz() {
@@ -117,28 +116,23 @@ public class SortTest {
     public void performanceTest() throws Exception {
         Thread.sleep(1000);     // initial delay
 
-        // create array
-        int mod = 1000;
-        int size = 1000 * 1000 * 5;
-        Integer[] array = new Integer[size];
-        for (int i = 0; i < size; i++) {
-            array[i] = i % mod;
-        }
+        // java system sort
+        performSort(new JavaSystemSort<>(), prepareInput());
 
         // quick sort 3-way
-        performSort(new QuickSort3Way<Integer>(), array);
+        performSort(new QuickSort3Way<Integer>(), prepareInput());
 
         // quick sort
-        performSort(new QuickSort<Integer>(), array);
+        performSort(new QuickSort<Integer>(), prepareInput());
 
         // bottom-up merge sort
-        performSort(new BottomUpMergeSort<Integer>(), array);
+        performSort(new BottomUpMergeSort<Integer>(), prepareInput());
 
         // merge sort
-        performSort(new MergeSort<Integer>(), array);
+        performSort(new MergeSort<Integer>(), prepareInput());
 
         // shell sort
-        performSort(new ShellSort<Integer>(), array);
+        performSort(new ShellSort<Integer>(), prepareInput());
 
         // insertion sort
 //        performSort(new InsertionSort<>(), array);
@@ -147,12 +141,182 @@ public class SortTest {
 //        performSort(new SelectionSort<>(), array);
     }
 
+    private List<Integer[]> prepareInput() {
+        int sizeTiny = 1000;
+        int sizeSmall = 1000 * 100;
+        int sizeBig = 1000 * 1000 * 5;
+        List<Integer[]> result = new ArrayList<>();
 
-    private void performSort(Sortable<Integer> algorithm, Integer[] array) throws Exception {
-        ExecutorService service = Executors.newScheduledThreadPool(7);
+        // ordered tiny
+        Integer[] array = new Integer[sizeTiny];
+        for (int i = 0; i < sizeTiny; i++) {
+            array[i] = i;
+        }
+        result.add(array);
+
+        // ordered small
+        array = new Integer[sizeSmall];
+        for (int i = 0; i < sizeSmall; i++) {
+            array[i] = i;
+        }
+        result.add(array);
+
+        // ordered big
+        array = new Integer[sizeBig];
+        for (int i = 0; i < sizeBig; i++) {
+            array[i] = i;
+        }
+        result.add(array);
+
+        // ordered tiny, duplicated keys on mod 10
+        array = new Integer[sizeTiny];
+        int mod = 10;
+        for (int i = 0; i < sizeTiny; i++) {
+            array[i] = i % mod;
+        }
+        result.add(array);
+
+        // ordered small, duplicated keys on mod 100
+        array = new Integer[sizeSmall];
+        mod = 100;
+        for (int i = 0; i < sizeSmall; i++) {
+            array[i] = i % mod;
+        }
+        result.add(array);
+
+        // ordered big, duplicated keys on mod 1000
+        array = new Integer[sizeBig];
+        mod = 1000;
+        for (int i = 0; i < sizeBig; i++) {
+            array[i] = i % mod;
+        }
+        result.add(array);
+
+        // shuffled tiny
+        array = new Integer[sizeTiny];
+        for (int i = 0; i < sizeTiny; i++) {
+            array[i] = i;
+        }
+        ShuffleSort.shuffle(array);
+        result.add(array);
+
+        // shuffled small
+        array = new Integer[sizeSmall];
+        for (int i = 0; i < sizeSmall; i++) {
+            array[i] = i;
+        }
+        ShuffleSort.shuffle(array);
+        result.add(array);
+
+        // shuffled big
+        array = new Integer[sizeBig];
+        for (int i = 0; i < sizeBig; i++) {
+            array[i] = i;
+        }
+        ShuffleSort.shuffle(array);
+        result.add(array);
+
+        // shuffled tiny, duplicated keys on mod 10
+        array = new Integer[sizeTiny];
+        mod = 10;
+        for (int i = 0; i < sizeTiny; i++) {
+            array[i] = i % mod;
+        }
+        ShuffleSort.shuffle(array);
+        result.add(array);
+
+        // shuffled small, duplicated keys on mod 100
+        array = new Integer[sizeSmall];
+        mod = 100;
+        for (int i = 0; i < sizeSmall; i++) {
+            array[i] = i % mod;
+        }
+        ShuffleSort.shuffle(array);
+        result.add(array);
+
+        // shuffled big, duplicated keys on mod 1000
+        array = new Integer[sizeBig];
+        mod = 1000;
+        for (int i = 0; i < sizeBig; i++) {
+            array[i] = i % mod;
+        }
+        ShuffleSort.shuffle(array);
+        result.add(array);
+
+        // all values the same tiny
+        array = new Integer[sizeTiny];
+        for (int i = 0; i < sizeTiny; i++) {
+            array[i] = 0;
+        }
+        result.add(array);
+
+        // all values the same small
+        array = new Integer[sizeSmall];
+        for (int i = 0; i < sizeSmall; i++) {
+            array[i] = 0;
+        }
+        result.add(array);
+
+        // all values the same big
+        array = new Integer[sizeBig];
+        for (int i = 0; i < sizeBig; i++) {
+            array[i] = 0;
+        }
+        result.add(array);
+
+        // half values the same tiny
+        array = new Integer[sizeTiny];
+        for (int i = 0; i < sizeTiny; i++) {
+            array[i] = i % 2;
+        }
+        result.add(array);
+
+        // half values the same small
+        array = new Integer[sizeSmall];
+        for (int i = 0; i < sizeSmall; i++) {
+            array[i] = i % 2;
+        }
+        result.add(array);
+
+        // half values the same big
+        array = new Integer[sizeBig];
+        for (int i = 0; i < sizeBig; i++) {
+            array[i] = i % 2;
+        }
+        result.add(array);
+
+        // descending order tiny
+        array = new Integer[sizeTiny];
+        for (int i = 0; i < sizeTiny; i++) {
+            array[i] = sizeTiny - i;
+        }
+        result.add(array);
+
+        // descending order small
+        array = new Integer[sizeSmall];
+        for (int i = 0; i < sizeSmall; i++) {
+            array[i] = sizeSmall - i;
+        }
+        result.add(array);
+
+        // descending order big
+        array = new Integer[sizeBig];
+        for (int i = 0; i < sizeBig; i++) {
+            array[i] = sizeBig - i;
+        }
+        result.add(array);
+
+        return result;
+    }
+
+
+    private void performSort(Sortable<Integer> algorithm, List<Integer[]> list) throws Exception {
+        int differentInputs = list.size();
+
+        ExecutorService service = Executors.newScheduledThreadPool(3);
         List<Future<Long>> handles = new ArrayList<>();
         for (int i = 0; i < loops; i++) {
-            Future<Long> handle = service.submit(new TestExecutor(algorithm, array.clone()));
+            Future<Long> handle = service.submit(new TestExecutor(algorithm, list.get(i % differentInputs).clone()));
             handles.add(handle);
         }
 
@@ -161,6 +325,7 @@ public class SortTest {
             sum += handle.get();
         }
         System.out.printf("%s executed in %d ms\n", algorithm.getClass().getSimpleName(), sum / loops);
+        Thread.sleep(1000);
     }
 
     private class TestExecutor implements Callable<Long> {

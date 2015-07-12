@@ -4,8 +4,6 @@ import intfc.Sortable;
 import w2.InsertionSort;
 import w2.ShuffleSort;
 
-import java.util.Comparator;
-
 /**
  * Created by Matija Vižintin
  * Date: 11. 07. 2015
@@ -66,7 +64,7 @@ public class QuickSort<T extends Comparable<T>> implements Sortable<T> {
         return j;
     }
 
-    private int medianOf3(T[] input, int i, int j, int k) {
+    protected int medianOf3(T[] input, int i, int j, int k) {
         if (input[i].compareTo(input[j]) < 0) {
             return input[j].compareTo(input[k]) < 0 ? j : k;
         } else {
