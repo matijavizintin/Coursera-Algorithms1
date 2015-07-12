@@ -2,8 +2,6 @@ package w1;
 
 import org.junit.Test;
 
-import java.text.NumberFormat;
-
 /**
  * Created by Matija Vižintin
  * Date: 22. 06. 2015

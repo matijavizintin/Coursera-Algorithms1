@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import w2.ShellSort;
 import w2.ShuffleSort;
+import w4.HeapSort;
 
 import java.time.Clock;
 import java.time.Instant;
@@ -111,6 +112,22 @@ public class SortTest {
 
         Assert.assertEquals(element, val);
     }
+
+    @Test
+    public void heapSort() {
+        List<Integer[]> inputs = prepareInput();
+
+        for (Integer[] input : inputs) {
+            new HeapSort<Integer>().sort(input);
+            try {
+                assertSorted(input);
+            } catch (Error e) {
+                e.printStackTrace();
+            }
+
+//            ShellSort.print(input);
+        }
+    }
     
     @Test
     public void performanceTest() throws Exception {
@@ -118,6 +135,9 @@ public class SortTest {
 
         // java system sort
         performSort(new JavaSystemSort<>(), prepareInput());
+
+        // heap sort
+        performSort(new HeapSort<>(), prepareInput());
 
         // quick sort 3-way
         performSort(new QuickSort3Way<Integer>(), prepareInput());
@@ -362,7 +382,7 @@ public class SortTest {
         for (int i = 0; i < array.length -1; i++) {
             try {
                 Assert.assertTrue(array[i] <= array[i + 1]);
-            } catch (Exception e) {
+            } catch (Error e) {
                 e.printStackTrace();
             }
         }
