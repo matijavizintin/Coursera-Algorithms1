@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="$PROJECTS_HOME$/Projects/Coursera-Algorithms1-assignmnets/percolation/src/Percolation.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECTS_HOME$/Projects/Coursera-Algorithms1-assignmnets/percolation/src/PercolationStats.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECTS_HOME$/Projects/Coursera-Algorithms1-assignmnets/percolation/src/PercolationVisualizer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
