@@ -85,16 +85,20 @@ public class SortTest {
 
     @Test
     public void quickSort() {
-        Integer[] array = new Integer[1000];
-        for (int i = 0; i < 1000; i++) {
+        int size = 1000 * 1000 * 100;
+        Integer[] array = new Integer[size];
+        for (int i = 0; i < size; i++) {
             array[i] = i;
         }
         ShuffleSort.shuffle(array);
 
+        long start = System.currentTimeMillis();
         new QuickSort<Integer>().sort(array);
+        long stop = System.currentTimeMillis();
+        System.out.println(">>>>>" + (stop - start));
         assertSorted(array);
 
-        ShellSort.print(array);
+//        ShellSort.print(array);
     }
 
     @Test

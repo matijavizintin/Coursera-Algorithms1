@@ -16,6 +16,11 @@ public class MaxBinaryHeap<T extends Comparable<T>> {
         pointer = 1;        // leave element at 0 empty
     }
 
+    public MaxBinaryHeap(T[] predefined) {
+        array = predefined;
+        pointer = predefined.length;
+    }
+
     public boolean isEmpty() {
         return pointer == 1;
     }
@@ -122,8 +127,14 @@ public class MaxBinaryHeap<T extends Comparable<T>> {
                 newLineThreshold *= 2;
             }
 
-            System.out.print(i + " ");
+            System.out.print(array[i] + " ");
         }
         System.out.println();
+    }
+
+    public void print2() {
+        for (T t : array) {
+            System.out.print(t + " ");
+        }
     }
 }

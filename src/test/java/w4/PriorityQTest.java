@@ -62,4 +62,22 @@ public class PriorityQTest {
             Assert.assertTrue(array[i] <= array[i + 1]);
         }
     }
+
+    @Test
+    public void quiz() {
+        MaxBinaryHeap<Integer> heap = new MaxBinaryHeap<>(new Integer[] {0, 99, 87, 95, 83, 63, 20, 47, 15 ,34 ,32 });
+        heap.add(90);
+        heap.add(55);
+        heap.add(93);
+        heap.print2();
+
+        System.out.println("-------------------------");
+        heap = new MaxBinaryHeap<Integer>(new Integer[] {0, 92, 89 ,67 ,68 ,73 ,54, 36, 47, 49, 21});
+        heap.removeMax();
+        heap.removeMax();
+        heap.removeMax();
+        heap.print2();
+
+
+    }
 }
