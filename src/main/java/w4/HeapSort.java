@@ -12,7 +12,7 @@ public class HeapSort<T extends Comparable<T>> implements Sortable<T> {
     public void sort(T[] input) {
         // create max heap
         int N = input.length;
-        int i = N / 2;
+        int i = N / 2;      // sink first half of the table, TODO: not sure why from half up
         while (i >= 1) {
             sink(input, i, N);
             i--;
@@ -21,8 +21,8 @@ public class HeapSort<T extends Comparable<T>> implements Sortable<T> {
         // sort down
         int idx = input.length;
         while(idx >= 1) {
-            swap(input, 1, idx);
-            sink(input, 1, --idx);
+            swap(input, 1, idx);        // swap first and last
+            sink(input, 1, --idx);      // sink swapped
         }
     }
 

@@ -7,16 +7,16 @@ import java.util.Arrays;
  * Date: 12. 07. 2015
  * Time: 15.53
  */
-public class MaxBinaryHeap<T extends Comparable<T>> {
+public class MaxBinaryHeapPriorityQueue<T extends Comparable<T>> {
     private T[] array;
     private int pointer;
 
-    public MaxBinaryHeap() {
+    public MaxBinaryHeapPriorityQueue() {
         array = (T[])new Comparable[2];
         pointer = 1;        // leave element at 0 empty
     }
 
-    public MaxBinaryHeap(T[] predefined) {
+    protected MaxBinaryHeapPriorityQueue(T[] predefined) {       // for quiz purposes
         array = predefined;
         pointer = predefined.length;
     }
@@ -31,18 +31,20 @@ public class MaxBinaryHeap<T extends Comparable<T>> {
 
         // add to pointer == last element in array
         array[pointer] = element;
-        swim(pointer);
+        swim(pointer);      // swim up
 
         // increment pointer
         pointer++;
     }
 
     public T removeMax() {
+        if (pointer <= 1) throw new IndexOutOfBoundsException();
+
         T max = getMax();
 
         // swap first with last
         swap(1, --pointer);
-        sink(1);
+        sink(1);        // sink down the first element
 
         // free memory
         array[pointer] = null;
@@ -52,7 +54,7 @@ public class MaxBinaryHeap<T extends Comparable<T>> {
     }
 
     public T getMax() {
-        return array[1];
+        return array[1];        // max is always first
     }
 
     private void swim(int k) {
