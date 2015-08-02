@@ -58,7 +58,7 @@ public class BinarySearchTree<KEY extends Comparable<KEY>, VALUE> implements Ite
     }
 
     public void delete(KEY key) {
-
+        delete(root, key);
     }
 
     private Node delete(Node node, KEY key) {
