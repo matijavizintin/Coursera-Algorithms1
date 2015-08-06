@@ -3,6 +3,26 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECTS_HOME$/Projects/Coursera-Algorithms1-assignmnets/kdtree/src/KdTree.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECTS_HOME$/Projects/Coursera-Algorithms1-assignmnets/kdtree/src/NearestNeighborVisualizer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECTS_HOME$/Projects/Coursera-Algorithms1-assignmnets/kdtree/src/RangeSearchVisualizer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECTS_HOME$/Projects/Coursera-Algorithms1-assignmnets/percolation/src/Percolation.java">
           <value>
             <set />
@@ -14,6 +34,36 @@
           </value>
         </entry>
         <entry key="$PROJECTS_HOME$/Projects/Coursera-Algorithms1-assignmnets/percolation/src/PercolationVisualizer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/w5/IntervalSearchTree.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/w5/OrthogonalLineSegmentIntersectionSearch.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/w5/IntervalSearchTreeTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/w5/OrthogonalLineSegmentTEst.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/w5/OrthogonalLineSegmentTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/fragment.java">
           <value>
             <set />
           </value>

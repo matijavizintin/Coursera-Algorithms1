@@ -2,6 +2,7 @@ package w5;
 
 import java.util.ArrayDeque;
 import java.util.Collection;
+import java.util.Queue;
 
 /**
  * Created by Matija Vižintin
@@ -172,6 +173,34 @@ public class IntervalSearchTree<KEY extends Comparable<KEY>, VALUE> {
             intersects(target, values, node.right);
     }
 
+    @Override
+    public String toString() {
+        Queue<Node> nodes = new ArrayDeque<>();
+        inorderNodes(root, nodes);
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Node node : nodes) {
+            stringBuilder.append("KEY: ").append(node.interval).append("\n VALUE: ").append(node.value)
+                    .append("\n LEFT KID: ").append(node.left != null ? node.left.value : null).append("\n RIGHT KID: ")
+                    .append(node.right != null ? node.right.value : null).append("\n RED: ").append(node.color)
+                    .append("\n");
+        }
+        return stringBuilder.toString();
+    }
+
+    private void inorderNodes(Node node, Queue<Node> queue) {
+        if (node == null) return;
+
+        // go through the left subtree
+        inorderNodes(node.left, queue);
+
+        // add main node
+        queue.add(node);
+
+        // go through the right subtree
+        inorderNodes(node.right, queue);
+    }
+
     private class Node {
         private KEY lo;
         private Interval interval;
@@ -201,6 +230,11 @@ public class IntervalSearchTree<KEY extends Comparable<KEY>, VALUE> {
 
         public boolean intersects(Interval interval) {
             return low.compareTo(interval.high) < 0 && high.compareTo(interval.low) > 0;
+        }
+
+        @Override
+        public String toString() {
+            return "[" + low + ", " + high + "]";
         }
     }
 }

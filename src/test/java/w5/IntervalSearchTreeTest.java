@@ -62,4 +62,20 @@ public class IntervalSearchTreeTest {
         }
         System.out.println();
     }
+
+    @Test
+    public void quit() {
+        IntervalSearchTree<Integer, String> tree = new IntervalSearchTree<>();
+        tree.put(24, 32, "A");
+        tree.put(4, 31, "B");
+        tree.put(18, 26, "C");
+        tree.put(3, 33, "D");
+        tree.put(10, 27, "E");
+        tree.put(11, 37, "F");
+        tree.put(12, 25, "G");
+        tree.put(35, 39, "H");
+
+        System.out.println(tree.toString());
+
+    }
 }
