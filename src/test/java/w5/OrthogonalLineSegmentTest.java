@@ -10,7 +10,7 @@ import java.util.List;
  * Date: 05. 08. 2015
  * Time: 20.41
  */
-public class OrthogonalLineSegmentTest1 {
+public class OrthogonalLineSegmentTest {
 
     @Test
     public void quiz() {
