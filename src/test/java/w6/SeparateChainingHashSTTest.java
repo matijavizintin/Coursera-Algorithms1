@@ -16,6 +16,26 @@ import java.time.temporal.ChronoUnit;
 public class SeparateChainingHashSTTest {
 
     @Test
+    public void quiz() {
+        SeparateChainingHashST<String, Integer> ht = new SeparateChainingHashST<>(3);
+        ht.put("F", 1);
+        ht.put("Q", 0);
+        ht.put("I", 1);
+        ht.put("E", 0);
+        ht.put("G", 2);
+        ht.put("M", 2);
+        ht.put("D", 2);
+        ht.put("K", 0);
+        ht.put("U", 1);
+        ht.put("R", 1);
+        ht.put("P", 2);
+        ht.put("V", 2);
+
+        Integer res = ht.get("N");
+        System.out.println("res = " + res);
+    }
+
+    @Test
     public void test() {
         SeparateChainingHashST<Integer, String> hashTable = new SeparateChainingHashST<>();
 
@@ -47,6 +67,17 @@ public class SeparateChainingHashSTTest {
 
         value = hashTable.get(7);
         Assert.assertEquals("g", value);
+    }
+
+    @Test
+    public void duplicatedValues() {
+        SeparateChainingHashST<Integer, String> hashTable = new SeparateChainingHashST<>();
+
+        hashTable.put(1, "1");
+        hashTable.put(1, "2");
+
+        String value = hashTable.get(1);
+        Assert.assertEquals("2", value);
     }
 
     @Test

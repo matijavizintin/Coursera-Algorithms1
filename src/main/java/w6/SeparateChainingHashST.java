@@ -27,6 +27,7 @@ public class SeparateChainingHashST<KEY, VALUE> {
 
         // go through the linked list at st[i]
         for(Node x = st[i]; x != null; x = x.next) {
+            System.out.println("x.key = " + x.key);
             if (key.equals(x.key))      // key found, return value
                 return (VALUE)x.value;
         }
