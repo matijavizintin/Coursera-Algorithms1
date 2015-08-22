@@ -43,6 +43,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/w1/BinarySearch.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/w5/IntervalSearchTree.java">
           <value>
             <set />
@@ -59,6 +64,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/w6/SeparateChainingHashST.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/w1/BinarySearchTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/w1/TimeComplexityTest.java">
           <value>
             <set />
           </value>
@@ -103,7 +118,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECTS_HOME$/Projects/roadrunner/trunk/business-impl/src/main/java/com/solveralynx/gema/business/impl/ejb/GBSystemEJB.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECTS_HOME$/Projects/roadrunner/trunk/business-impl/src/main/java/com/solveralynx/gema/business/impl/pojo/energyaccounting/BusinessPartnersAgent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECTS_HOME$/Projects/roadrunner/trunk/business-impl/src/main/resources/META-INF/persistence.xml">
           <value>
             <set />
           </value>

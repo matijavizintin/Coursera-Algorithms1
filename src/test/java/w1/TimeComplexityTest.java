@@ -10,6 +10,34 @@ import org.junit.Test;
 public class TimeComplexityTest {
 
     @Test
+    public void quiz() {
+        double[] n = new double[10];
+        int val = 128;
+        for (int i = 0; i < 10; i++) {
+            n[i] = val;
+            val *= 2;
+        }
+
+        double[] t = new double[] {
+                0.000,
+                  0.001,
+                  0.005,
+                   0.038,
+                   0.275,
+                    1.958,
+                    13.562,
+                    99.115,
+                   714.119,
+                  5137.854
+        };
+
+        TimeComplexity.approxTimeComplexity(n, t);
+
+        System.out.println();
+        TimeComplexity.approxTeoreticTimeComplexity(n, t);
+    }
+
+    @Test
     public void test1() {
         double[] n = new double[12];
         int val = 32;

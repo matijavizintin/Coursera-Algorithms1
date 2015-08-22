@@ -1,7 +1,5 @@
 package w1;
 
-import java.util.Collections;
-
 /**
  * Created by Matija Vižintin
  * Date: 21. 06. 2015
@@ -16,8 +14,9 @@ public class BinarySearch {
 
         while (lowerIndex <= higherIndex) {
             int midIndex = lowerIndex + (higherIndex - lowerIndex) / 2;
-            System.out.printf("LC: %d >> Lower: %d, Middle: %d, Higher: %d\n", ++loopCounter, lowerIndex, midIndex, higherIndex);
+//            System.out.printf("LC: %d >> Lower: %d, Middle: %d, Higher: %d\n", ++loopCounter, lowerIndex, midIndex, higherIndex);
 
+            System.out.println("ordered[midIndex] = " + ordered[midIndex]);
             if (key < ordered[midIndex]) {
                 higherIndex = midIndex - 1;
             } else if (key > ordered[midIndex]) {

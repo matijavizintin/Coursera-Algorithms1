@@ -15,4 +15,10 @@ public class BinarySearchTest {
         int result = new BinarySearch().binarySearch(array, 1500);
         System.out.println(result);
     }
+
+    @Test
+    public void quiz() {
+        int[] array = new int[] {14, 16, 17, 30, 36, 44, 51, 52, 53, 63, 71, 74, 83, 87, 97 };
+        new BinarySearch().binarySearch(array, 46);
+    }
 }
