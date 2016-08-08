@@ -85,7 +85,7 @@ public class SortTest {
 
     @Test
     public void quickSort() {
-        int size = 1000 * 1000 * 100;
+        int size = 1000 * 1000 * 10;
         Integer[] array = new Integer[size];
         for (int i = 0; i < size; i++) {
             array[i] = i;

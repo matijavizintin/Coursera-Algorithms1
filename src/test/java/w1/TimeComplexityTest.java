@@ -11,24 +11,23 @@ public class TimeComplexityTest {
 
     @Test
     public void quiz() {
-        double[] n = new double[10];
-        int val = 128;
-        for (int i = 0; i < 10; i++) {
+        double[] n = new double[9];
+        int val = 32;
+        for (int i = 0; i < 9; i++) {
             n[i] = val;
             val *= 2;
         }
 
         double[] t = new double[] {
-                0.000,
-                  0.001,
-                  0.005,
-                   0.038,
-                   0.275,
-                    1.958,
-                    13.562,
-                    99.115,
-                   714.119,
-                  5137.854
+                     0.000,
+                     0.001,
+                     0.015,
+                     0.112,
+                     1.094,
+                    10.366,
+                    98.472,
+                   940.545,
+                  8870.836
         };
 
         TimeComplexity.approxTimeComplexity(n, t);

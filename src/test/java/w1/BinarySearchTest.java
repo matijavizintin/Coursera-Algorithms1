@@ -18,7 +18,7 @@ public class BinarySearchTest {
 
     @Test
     public void quiz() {
-        int[] array = new int[] {14, 16, 17, 30, 36, 44, 51, 52, 53, 63, 71, 74, 83, 87, 97 };
-        new BinarySearch().binarySearch(array, 46);
+        int[] array = new int[] {11, 12, 17, 19, 23, 29, 31, 34, 40, 50, 70, 76, 81, 87, 89 };
+        new BinarySearch().binarySearch(array, 59);
     }
 }
